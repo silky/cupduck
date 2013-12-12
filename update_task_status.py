@@ -30,5 +30,11 @@ if __name__ == "__main__":
     def display_time (epoch):
         return time.strftime("%a %d %b %Y, %I:%M:%S %p", time.localtime(float(epoch)))
 
-    active = [ (t['project'], display_time(t['start'])) for t in tasks if 'start' in t ]
+    def maybe_proj (t):
+        if 'project' in t:
+            return t['project']
+        else:
+            return 'something'
+
+    active = [ (maybe_proj(t), display_time(t['start'])) for t in tasks if 'start' in t ]
     write_log(active)
