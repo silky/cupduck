@@ -27,9 +27,9 @@ homeHandler = do
     --  https://www.fpcomplete.com/school/to-infinity-and-beyond/pick-of-the-week/bytestring-bits-and-pieces
     let url = "https://dl.dropboxusercontent.com/u/28596024/taskwarrior.txt" 
     raw <- liftIO $ simpleHttp url
-    let project = B.concat $ L.toChunks raw
+    let stuff = B.concat $ L.toChunks raw
     writeBS "<title>what is noon doing</title>"
-    writeBS project 
+    writeBS stuff 
 
 
 -- echoHandler :: Snap ()
