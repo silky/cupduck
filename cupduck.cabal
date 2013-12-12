@@ -1,11 +1,11 @@
 Name:                cupduck
 Version:             0.1
-Synopsis:            Project Synopsis Here
-Description:         Project Description Here
-License:             AllRightsReserved
-Author:              Author
-Maintainer:          maintainer@example.com
-Stability:           Experimental
+Synopsis:            What is Noon doing now?
+Description:         This is a website that tells you what Noon is doing now, according to TaskWarrior.
+License:             MIT
+Author:              Noon Silk
+Maintainer:          noonsilk+cupduck@gmail.com
+Stability:           Stable
 Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.2
