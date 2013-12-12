@@ -1,7 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
--- import           Control.Applicative
 import           Snap.Core
 import           Snap.Http.Server
 import           Network.HTTP.Conduit
@@ -15,16 +14,10 @@ main = quickHttpServe site
 site :: Snap ()
 site =
     ifTop homeHandler
-    -- <|>
-    -- route [ ("foo", writeBS "bar")
-    --       , ("echo/:echoparam", echoHandler)
-    --       ]
 
 
 homeHandler :: Snap ()
 homeHandler = do
-    -- Bytestrings 
-    --  https://www.fpcomplete.com/school/to-infinity-and-beyond/pick-of-the-week/bytestring-bits-and-pieces
     let url = "https://dl.dropboxusercontent.com/u/28596024/taskwarrior.txt" 
     raw <- liftIO $ simpleHttp url
     let stuff = B.concat $ L.toChunks raw
@@ -32,10 +25,3 @@ homeHandler = do
     writeBS "<pre>"
     writeBS stuff 
     writeBS "</pre>"
-
--- echoHandler :: Snap ()
--- echoHandler = do
---     -- liftIO $ simpleHttp "http://www.example.com/foo.txt" >>= L.writeFile "foo.txt"
---     param <- getParam "echoparam"
---     maybe (writeBS "must specify echo/param in URL")
---           writeBS param
