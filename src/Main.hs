@@ -29,8 +29,9 @@ homeHandler = do
     raw <- liftIO $ simpleHttp url
     let stuff = B.concat $ L.toChunks raw
     writeBS "<title>what is noon doing</title>"
+    writeBS "<pre>"
     writeBS stuff 
-
+    writeBS "</pre>"
 
 -- echoHandler :: Snap ()
 -- echoHandler = do
