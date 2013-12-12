@@ -1,5 +1,9 @@
 dist
 cabal-dev
+.ghci
+log/
+bin/
+*.pyc
 *.o
 *.hi
 *.chi
