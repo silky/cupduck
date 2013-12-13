@@ -16,7 +16,7 @@ logfile = "/home/noon/Dropbox/Public/taskwarrior.txt"
 def write_log (active):
     with open(logfile, "w") as f:
         if not active or len(active) == 0:
-            print("nothing", file=f)
+            print("unknown", file=f)
             return
 
         # otherwise, print everything
